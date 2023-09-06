@@ -8,6 +8,7 @@ import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 const form = document.querySelector("#search-form");
 const formInput = document.querySelector('#search-form [name="searchQuery"]');
+// const searchIcon = document.querySelector();
 const gallery = document.querySelector(".gallery");
 let pageNumber = 1;
 let inputValue = null;
@@ -26,6 +27,7 @@ async function submitForm(event) {
     Loading.pulse("Loading data...");
 
     inputValue = formInput.value;
+    loadMoreBttn.classList.add("ishidden");
 
     if(inputValue === "") {
         Notify.failure("Fill in the field");
@@ -84,19 +86,19 @@ function createImages(searchResult) {
         <a href="${largeImageURL}">
         <img src="${webformatURL}" alt="${tags}" loading="lazy" /></a>
         <div class="info">
-          <p class="info-item">
+          <p class="info__item">
             <b>Likes</b>
             ${likes}
           </p>
-          <p class="info-item">
+          <p class="info__item">
             <b>Views</b>
             ${views}
           </p>
-          <p class="info-item">
+          <p class="info__item">
             <b>Comments</b>
             ${comments}
           </p>
-          <p class="info-item">
+          <p class="info__item">
             <b>Downloads</b>
             ${downloads}
           </p>
