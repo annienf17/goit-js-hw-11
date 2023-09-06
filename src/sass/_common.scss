@@ -1,1 +1,15 @@
 @import '~node_modules/modern-normalize/modern-normalize.css';
+
+.form-container {
+    margin: auto;
+    text-align: center;
+    
+}
+.search-form {
+    padding: 10px;
+    background-color: rgb(63, 86, 174);
+}
+
+.ishidden {
+    display: none;
+}
