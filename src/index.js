@@ -24,8 +24,6 @@ loadMoreBttn.addEventListener("click", loadMoreImages);
 async function submitForm(event) {
     event.preventDefault();
 
-    Loading.pulse("Loading data...");
-
     inputValue = formInput.value;
     loadMoreBttn.classList.add("ishidden");
 
@@ -36,10 +34,11 @@ async function submitForm(event) {
 
     event.currentTarget.reset();
     gallery.innerHTML = "";
-    
+    Loading.pulse("Loading data...");
 
     try {
         await LoadingImages(pageNumber, inputValue);
+        
         Loading.remove();
     }
     catch(error){
